@@ -17,145 +17,221 @@
       width: 100%;
       height: 100%;
       display: flex;
-      align-items: stretch;
-      justify-content: center;
-      background: url(./imgs/background.png) no-repeat center/cover;
+      flex-direction: column;
+      justify-content: flex-start;
+      background: url(./imgs/bg.png) no-repeat center/cover;
     }
-
-    .container {
-      flex: 1 0 auto;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: space-between;
-      padding: 100px 200px;
+    .title{
+      width: 100%;
+      text-align: center;
+      height: 20%;
     }
-
-    .row {
+    .logo{
+      padding-top:60px ;
+    }
+    .container{
+      width: 100%;
+      height: 80%;
       display: flex;
-      flex-flow: row nowrap;
-      flex: 1 0 auto;
-      align-items: center;
       justify-content: space-between;
     }
-
-    .title {
-      justify-content: center;
-      font-family: AdobeHeitiStd-Regular;
-      font-size: 60px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 120px;
-      letter-spacing: 6px;
-      color: #ffe0a7;
+    .Img{
+      width: 40%;
+      position: relative;
     }
-
-    .platform-box {
-      flex: 1 0 200px;
-      border: solid 1px rgba(255, 224, 167, 1);
-      border-radius: 12px;
-      margin: 0px 70px;
-      padding: 20px 5px;
-      color: #ffe0a7;
+    @keyframes mySsz{
+      from{transform: rotateZ(0deg);}
+      to{transform: rotateZ(360deg);}
+    }
+    .ssz{
+      position: absolute;
+      left: 50%;
+      margin-left: -321px;
+      top: 40%;
+      margin-top: -321px;
+      animation: mySsz 6s linear 0s infinite;
+    }
+    .lsz{
+      position: absolute;
+      left: 50%;
+      margin-left: -181px;
+      top: 40%;
+      margin-top: -177px;
+    }
+    .left{
+      position: absolute;
+      left: -8%;
+      top: 40%;
+      margin-top: -147px;
+    }
+    .right{
+      position: absolute;
+      right: -8%;
+      top: 40%;
+      margin-top: -147px;
+    }
+    canvas{
+      position: absolute;
+      left: 50%;
+      margin-left: -400px;
+      top: 40%;
+      margin-top: -303px;
+    }
+    .contentLeft{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-left: 50px;
+      padding-bottom: 30px;
+      width: 30%;
+    }
+    .contentRight{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-right: 50px;
+      padding-bottom: 30px;
+      width: 30%;
+    }
+    .first:hover{
       cursor: pointer;
+      transform: scale(1.08);
     }
-
-    .platform-box:hover {
-      color: #3a0a8b;
-      background-color: rgba(255, 224, 167, 1);
-      box-shadow: 0px 15px 30px 0px rgba(252, 189, 74, 0.3);
+    .second:hover{
+      cursor: pointer;
+      transform: scale(1.08);
     }
-
-    .name {
-      text-align: center;
-      font-family: Arial-BoldMT;
-      font-size: 20px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 40px;
+    .third:hover{
+      cursor: pointer;
+      transform: scale(1.08);
     }
-
-    .desc {
-      text-align: center;
-      font-family: MicrosoftYaHei;
-      font-size: 16px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 40px;
+    .four:hover{
+      cursor: pointer;
+      transform: scale(1.08);
     }
   </style>
 </head>
 
 <body>
-  <div id="app">
-    <div class="container">
-      <div class="row title">
-        生产平台演示区入口
+<div id="app">
+  <div class="title">
+    <img src="./imgs/logo.png" class="logo"/>
+  </div>
+  <div class="container">
+    <div class="contentLeft">
+      <div class="first" onclick="goto('http://192.168.4.129/')">
+        <img src="./imgs/Mapspotter.png"/>
       </div>
-      <div class="row">
-        <div class="platform-box" onclick="goto('http://192.168.4.129/')">
-          <div class="name">Mapspotter</div>
-          <div class="desc">
-            接入多维度数据，挖掘空间数据价值，精准发现现实数据变化
-          </div>
-        </div>
-        <div class="platform-box" onclick="goto('WebEditor')">
-          <div class="name">一体化编辑平台</div>
-          <div class="desc">
-            全要素一体化在线编辑平台，支持大数据量数据渲染
-          </div>
-        </div>
+      <div class="second" onclick="goto('http://192.168.15.78/iqu/task/show/main.jsp')">
+        <img src="./imgs/情报.png"/>
       </div>
-      <div class="row">
-        <div class="platform-box" onclick="goto('http://fastmap.navinfo.com')">
-          <div class="name">生产管理平台</div>
-          <div class="desc">
-            一体化管理架构，整合了从生产规划到数据出品的全环节
-          </div>
-        </div>
-        <div class="platform-box" onclick="goto('http://fs.navinfo.com/smap/index.html')">
-          <div class="name">SMap</div>
-          <div class="desc">
-            实现全要素的增量日更新，服务发布实时响应，定制化服务为用户带来更多可能
-          </div>
-        </div>
+      <div class="third" onclick="goto('http://fastmap.navinfo.com')">
+        <img src="./imgs/生产.png"/>
       </div>
-      <div class="row">
-        <div class="platform-box" onclick="goto('http://fs-road.navinfo.com/dev/trunk/global/#/')">
-          <div class="name">外业监控平台</div>
-          <div class="desc">
-            支撑外业全流程多角度的数据监控，填补外业在线管控的空白
-          </div>
-        </div>
-        <div class="platform-box" onclick="goto('http://fs-road.navinfo.com/dev/trunk/limit/apps/limitEditor/#/info')">
-          <div class="name">服务产品平台</div>
-          <div class="desc">
-            支撑服务型产品定制化在线编辑，实现所编即所出
-          </div>
-        </div>
+      <div class="four" onclick="goto('http://fs-road.navinfo.com/dev/trunk/global/#/')">
+        <img src="./imgs/外业监控.png"/>
       </div>
-      <div class="row">
-        <div class="platform-box" onclick="goto('http://192.168.15.78/iqu/task/show/main.jsp')">
-          <div class="name">情报</div>
-          <div class="desc">
-            实时捕获互联网信息，利用自然语言处理技术挖掘地图情报，指引外业现场采集
-          </div>
-        </div>
-        <div class="platform-box" onclick="goto('test')">
-          <div class="name">运维平台</div>
-          <div class="desc">
-            在中心模式下，支撑应用、请求、数据、系统及数据库的线上线下运维
-          </div>
-        </div>
+    </div>
+    <div class="Img">
+      <img src="./imgs/顺时针.png" class="ssz"/>
+      <img src="./imgs/逆时针.png" class="lsz"/>
+      <img src="./imgs/left.png" class="left"/>
+      <img src="./imgs/right.png" class="right"/>
+      <canvas width="800" height="600"></canvas>
+    </div>
+    <div class="contentRight">
+      <div class="first" onclick="goto('http://fs.navinfo.com/smap/index.html')">
+        <img src="./imgs/Smap.png"/>
+      </div>
+      <div class="second" onclick="goto('WebEditor')">
+        <img src="./imgs/一体化.png"/>
+      </div>
+      <div class="third" onclick="goto('http://fs-road.navinfo.com/dev/trunk/limit/apps/limitEditor/#/info')">
+        <img src="./imgs/庄家.png"/>
+      </div>
+      <div class="four" onclick="goto('test')">
+        <img src="./imgs/运维.png"/>
       </div>
     </div>
   </div>
+</div>
 </body>
 <script src="./libs/jquery-2.1.1/jquery-2.1.1.min.js"></script>
 <script>
-  // 登录一体化编辑平台，并跳转到任务列表页面
+  var canvas=document.querySelector('canvas');
+  var ctx=canvas.getContext('2d');
+  function Clock(opt){
+    for(var key in opt){
+      this[key]=opt[key];
+    }
+    ctx.strokeStyle = '#fff';
+    this.init();
+  }
+  Clock.prototype={
+    constructor:Clock,
+    init:function(){
+      var self=this;
+      //绘制大圆
+      self.drawBigCircle();
+      //绘制刻度
+      self.drawTicks();
+    },
+    //绘制表盘和表心的功能函数
+    drawBigCircle:function(){
+      //绘制表盘
+      ctx.beginPath();
+      ctx.arc(this.bigX,this.bigY,this.bigR+7,0,Math.PI*3);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(this.bigX,this.bigY,this.bigR+35,0,Math.PI*4);
+      ctx.stroke();
+    },
+    //绘制刻度线的功能函数
+    drawTicks:function(){
+      //起始点的弧度
+      var startRadian=-Math.PI/3;
+      //每个小刻度之间的弧度差
+      var singleRadian=Math.PI/30;
+      for(var i=0;i<80;i++){
+        //每个刻度表盘上的弧度
+        var Radian=startRadian+singleRadian*i;
+        var length;
+        var width;
+
+        length=this.smallLength;
+        width=this.smallWidth;
+        //相对于圆心h是Y轴的偏移量，b是X轴的偏移量
+        var h=(this.bigR-length)*Math.sin(Radian);
+        var b=(this.bigR-length)*Math.cos(Radian);
+
+        var h1=this.bigR*Math.sin(Radian);
+        var b1=this.bigR*Math.cos(Radian);
+        //刻度起始点的X、Y轴坐标
+        var x=this.bigX+b;
+        var y=this.bigY+h;
+        //刻度终点的X、Y轴坐标
+        var x1=this.bigX+b1;
+        var y1=this.bigY+h1;
+
+        ctx.beginPath();
+        //定义线宽
+        ctx.lineWidth=width;
+        ctx.moveTo(x,y);
+        ctx.lineTo(x1,y1);
+        ctx.stroke();
+      }
+    },
+  };
+  var clock = new Clock({
+    //钟表的X、Y轴坐标和钟表半径
+    bigX:400,bigY:300,bigR:205,
+    length:20,//刻度线的长度
+    bigLength:20,bigWidth:5,//大刻度的长宽
+    smallLength:20,smallWidth:5//小刻度的长宽
+  })
+
   var loginWebEditor = function () {
     $.get('http://fastmap.navinfo.com/service/man/userInfo/login/', {
       parameter: JSON.stringify({
